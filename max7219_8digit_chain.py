@@ -18,6 +18,7 @@ CHAR_MAP = {
     'Q': 0x73, 'R': 0x05, 'S': 0x5b, 'T': 0x0f,
     'U': 0x1c, 'V': 0x3e, 'W': 0x2a, 'X': 0x37,
     'Y': 0x3b, 'Z': 0x6d, ' ': 0x00, '-': 0x01,
+    '_': 0x08,
     '\xb0': 0x63, '.': 0x80
 }
 
@@ -73,7 +74,7 @@ class Display:
         for i in range(8):
             self.ss.value(0)
             for j in range(self.unit):
-                spi.write(bytearray([i + 1, self.buffer[i + j * 8]]))
+                self.spi.write(bytearray([i + 1, self.buffer[i + j * 8]]))
             self.ss.value(1)
 
     def display(self):
