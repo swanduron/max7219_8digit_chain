@@ -4,6 +4,10 @@ A micropython lib for MAX7219 8 digit chain, uses SPI interface.
 
 This code has been passed the test of ESP32 board, if you use ESP8266 or pyb, please change the ss pin as your expected.
 
+This lib is modified from other max7219 8digit as below link, thanks for the original contributer.
+
+https://github.com/pdwerryhouse/max7219_8digit.git
+
 ## ESP32 example
 
 **Display a increasing number in 2 digit module**
