@@ -49,16 +49,19 @@ class Display:
         self.set_register(REG_SHUTDOWN, 1)
 
     def set_register(self, register, value):
+        # ensure that all register can be write to each chio
         self.ss.value(0)
         for i in range(self.unit):
             self.spi.write(bytearray([register, value]))
         self.ss.value(1)
 
     def decode_char(self, c):
+        # convert char to bit
         d = CHAR_MAP.get(c)
         return d if d != None else ' '
 
     def write_to_buffer(self, s):
+        # use bit to fill bytearray
         s = s[:8 * self.unit]
         string_buffer = self.template % s
         for i in range(8 * self.unit):
