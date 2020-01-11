@@ -39,3 +39,8 @@ display.brightness(3)
 
 **Demo image**
 ![image](https://github.com/swanduron/max7219_8digit_chain/blob/master/image/demo.jpg)
+
+
+**Update schedule**
+
+In current code, if the string is '1.2345', the dot will use one digit instead of following above digit, this is not expected behavior.
