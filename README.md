@@ -36,3 +36,6 @@ while True:
 display.brightness(3)
 
 ```
+
+**Demo image**
+![image](https://github.com/swanduron/max7219_8digit_chain/blob/master/image/demo.jpg)
