@@ -83,16 +83,3 @@ class Display:
     def brightness(self, level):
         # level from 0 ~ 31, 32 will be back to 0
         self.set_register(REG_INTENSITY, level)
-
-
-spi = SPI(1, sck=Pin(14), mosi=Pin(13))
-ss = Pin(4, Pin.OUT)
-ss.value(1)
-
-display = Display(spi, ss, 1, 2)
-counter = 0
-while True:
-    counter += 1
-    time.sleep(0.01)
-    display.write_to_buffer(str(counter))
-    display.write_to_chip()
