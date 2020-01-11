@@ -8,8 +8,7 @@ This code has been passed the test of ESP32 board, if you use ESP8266 or pyb, pl
 
 **Chain of 8 digit**
 
-'''python
-
+```python
 from machine import SPI, Pin
 from max7219_8digit_chain import *
 
@@ -24,4 +23,4 @@ while True:
     time.sleep(0.01)
     display.write_to_buffer(str(counter))
     display.write_to_chip()
-'''
+```
