@@ -6,11 +6,12 @@ This code has been passed the test of ESP32 board, if you use ESP8266 or pyb, pl
 
 ## ESP32 example
 
-**Chain of 8 digit**
+**Display a increasing number in 2 digit module**
 
 ```python
 from machine import SPI, Pin
 from max7219_8digit_chain import *
+import time
 
 spi = SPI(1, sck=Pin(14), mosi=Pin(13))
 ss = Pin(4, Pin.OUT)
@@ -23,4 +24,11 @@ while True:
     time.sleep(0.01)
     display.write_to_buffer(str(counter))
     display.write_to_chip()
+```
+**Change intensity of module**
+
+```python
+
+display.brightness(3)
+
 ```
